@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+
+.Clestrix_provides {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.MuiButtonBase-root {
+  text-transform: capitalize !important;
+  font-size: 15px;
+}
+
+.Experience_the_best {
+  background-color: rgb(255 191 35);
+}
+
+.CurveBg {
+  background-image: url('/images/download.svg');
+  transform: scaleX(-1);
+  height: 70px;
+  width: 100%;
+}
+
+.join_clestrx {
+  background-color: rgb(255 191 35);
+  padding: 8px 37px;
+  border-radius: 6px;
+  border: 1px solid black;
+  font-weight: 600;
+  color: black;
+}
+
+.join_clestrx:hover{
+  background-color: black;
+  color: rgb(255 191 35);
+}
+
+.join_clestrx_2 {
+  padding: 8px 10px;
+}
+
+.join_clestrx_3 {
+  background-color: black;
+  padding: 8px 14px;
+  color: white;
+}
+
+.join_clestrx_3:hover{
+  background-color: rgb(255 191 35);
+  color: black;
+}
