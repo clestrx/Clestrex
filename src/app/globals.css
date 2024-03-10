@@ -87,3 +87,7 @@ body {
   background-color: rgb(255 191 35);
   color: black;
 }
+
+.MuiBox-root button{
+  color: black;
+}

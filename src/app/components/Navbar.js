@@ -95,9 +95,13 @@ function ResponsiveAppBar() {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                    <a href={page === 'Home' ? '/' : `/${page.toLowerCase().replace(/\s+/g, '')}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                        <Typography textAlign="center">{page}</Typography>
+                                    </a>
                                 </MenuItem>
                             ))}
+                            <button className='join_clestrx join_clestrx_2'>Join Clestrx</button>
+
                         </Menu>
                     </Box>
                     {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
@@ -126,16 +130,18 @@ function ResponsiveAppBar() {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
                         {pages.map((page) => (
-                            <Button
+                            <a
                                 key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'black', display: 'block' }}
+                                href={page === 'Home' ? '/' : `/${page.toLowerCase().replace(/\s+/g, '')}`}
+                                style={{ textDecoration: 'none', color: 'black' }}
                             >
-                                {page}
-                            </Button>
+                                <Button sx={{ my: 2, display: 'block' }}>
+                                    {page}
+                                </Button>
+                            </a>
                         ))}
+                        <button className='join_clestrx join_clestrx_2'>Join Clestrx</button>
                     </Box>
-                    <button className='join_clestrx join_clestrx_2'>Join Clestrx</button>
 
                     {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
