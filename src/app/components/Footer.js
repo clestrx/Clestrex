@@ -59,10 +59,9 @@ const Footer = () => {
                             </div>
                         </div>
 
-                        <div className="pl-4">
+                        <div className="pl-4" id='contact_us'>
                             <h1 className='text-[20px] font-semibold mb-8'>Contact Us</h1>
                             <form action="#" method="post" className="space-y-6">
-
                                 <div className="flex space-x-4">
                                     <div className="w-1/2">
                                         <label htmlFor="email" className="block text-sm font-medium text-black">Email *</label>
@@ -73,12 +72,10 @@ const Footer = () => {
                                         <input type="text" id="query" name="query" placeholder="Subject for Query" className="mt-1 p-2 w-full border-2 border-black rounded-md focus:outline-none text-black bg-transparent placeholder-black hover:bg-white focus:bg-white" />
                                     </div>
                                 </div>
-
                                 <div>
                                     <label htmlFor="message" className="block text-sm font-medium text-black">Message *</label>
                                     <textarea id="message" name="message" placeholder="Elaborate Your Concerns" rows="4" className="mt-1 p-2 w-full border-2 border-black rounded-md focus:outline-none text-black bg-transparent placeholder-black hover:bg-white focus:bg-white"></textarea>
                                 </div>
-
                                 <div>
                                     <button type="submit" className="bg-black text-white px-4 py-2 w-full rounded-md transition duration-300 hover:bg-white hover:text-black hover:border-1 hover:border-black focus:outline-none focus:ring focus:border-blue-300">
                                         Submit

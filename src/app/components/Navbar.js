@@ -14,10 +14,28 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Home', 'Film Industry', 'Business', 'Sports', 'More'];
+const pages = [
+    {
+        name: 'Home',
+        url: '/'
+    },
+    {
+        name: 'Film Industry',
+        url: '/filmindustry'
+    },
+    {
+        name: 'Business',
+        url: '/business'
+    },
+];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
+    const scrolltoHash = function (element_id) {
+        const element = document.getElementById(element_id)
+        element?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+    }
+
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -93,15 +111,21 @@ function ResponsiveAppBar() {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <a href={page === 'Home' ? '/' : `/${page.toLowerCase().replace(/\s+/g, '')}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                                        <Typography textAlign="center">{page}</Typography>
-                                    </a>
-                                </MenuItem>
-                            ))}
-                            <button className='join_clestrx join_clestrx_2'>Join Clestrx</button>
-
+                            {pages.map((page, index) => {
+                                return (
+                                    <MenuItem key={index} onClick={handleCloseNavMenu}>
+                                        <a href={page?.url} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                            <Typography textAlign="center">{page?.name}</Typography>
+                                        </a>
+                                    </MenuItem>
+                                )
+                            })}
+                            <a onClick={() => scrolltoHash('contact_us')} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                <Typography textAlign="center">Contact</Typography>
+                            </a>
+                            <a href="/pricing">
+                                <button className='join_clestrx join_clestrx_2'>Join Clestrx</button>
+                            </a>
                         </Menu>
                     </Box>
                     {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
@@ -129,18 +153,25 @@ function ResponsiveAppBar() {
                         Clestrx
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
-                        {pages.map((page) => (
-                            <a
-                                key={page}
-                                href={page === 'Home' ? '/' : `/${page.toLowerCase().replace(/\s+/g, '')}`}
-                                style={{ textDecoration: 'none', color: 'black' }}
-                            >
-                                <Button sx={{ my: 2, display: 'block' }}>
-                                    {page}
-                                </Button>
-                            </a>
-                        ))}
-                        <button className='join_clestrx join_clestrx_2'>Join Clestrx</button>
+                        {pages.map((page, index) => {
+                            return (
+                                <a
+                                    key={index}
+                                    href={page?.url}
+                                    style={{ textDecoration: 'none', color: 'black' }}
+                                >
+                                    <Button sx={{ my: 2, display: 'block' }}>
+                                        {page?.name}
+                                    </Button>
+                                </a>
+                            )
+                        })}
+                        <a onClick={() => scrolltoHash('contact_us')} style={{ textDecoration: 'none', color: 'black' }}>
+                            <Button sx={{ my: 2, display: 'block' }}>Contact</Button>
+                        </a>
+                        <a href="/pricing" className='flex justify-center items-center'>
+                            <button className='join_clestrx join_clestrx_2'>Join Clestrx</button>
+                        </a>
                     </Box>
 
                     {/* <Box sx={{ flexGrow: 0 }}>
@@ -174,7 +205,7 @@ function ResponsiveAppBar() {
           </Box> */}
                 </Toolbar>
             </Container>
-        </AppBar>
+        </AppBar >
     );
 }
 export default ResponsiveAppBar;

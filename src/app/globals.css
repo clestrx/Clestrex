@@ -91,3 +91,15 @@ body {
 .MuiBox-root button{
   color: black;
 }
+
+.first_half{
+  background-color: rgb(255,191,35);
+}
+
+.second_half{
+  background-color: rgb(255,215,239);
+}
+
+.sub_but{
+  background-color: rgb(255,191,35);
+}

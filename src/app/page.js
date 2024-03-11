@@ -1,11 +1,8 @@
 import Image from "next/image";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <div className="max-w-[1024px] mx-auto px-4 mt-20">
         <div className="grid lg:grid-cols-2 md:grid-cols-1 p-8">
           <div className="">
@@ -1050,7 +1047,6 @@ export default function Home() {
           </svg>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
