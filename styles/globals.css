@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* <!--====== Slick css ======--> */
+@import "../public/assets/css/slick.css";
+/* <!--====== Jquery ui css ======--> */
+@import "../public/assets/css/jquery-ui.min.css";
+/* <!--====== Custom css ======--> */
+@import "../public/assets/css/custom.css";
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.Clestrix_provides {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.MuiButtonBase-root {
+  text-transform: capitalize !important;
+  font-size: 15px;
+}
+
+.Experience_the_best {
+  background-color: rgb(255 191 35);
+}
+
+.CurveBg {
+  background-image: url('/assets/images/download.svg');
+  transform: scaleX(-1);
+  height: 70px;
+  width: 100%;
+}
+
+.join_clestrx {
+  background-color: rgb(255 191 35);
+  padding: 8px 37px;
+  border-radius: 6px;
+  border: 1px solid black;
+  font-weight: 600;
+  color: black;
+}
+
+.join_clestrx:hover{
+  background-color: black;
+  color: rgb(255 191 35);
+}
+
+.join_clestrx_2 {
+  padding: 8px 10px;
+}
+
+.join_clestrx_3 {
+  background-color: black;
+  padding: 8px 14px;
+  color: white;
+}
+
+.join_clestrx_3:hover{
+  background-color: rgb(255 191 35);
+  color: black;
+}
+
+.MuiBox-root button{
+  color: black;
+}
+
+.first_half{
+  background-color: rgb(255,191,35);
+}
+
+.second_half{
+  background-color: rgb(255,215,239);
+}
+
+.sub_but{
+  background-color: rgb(255,191,35);
+}
+
+.css-ueuitw-MuiPaper-root-MuiAppBar-root{
+  box-shadow: none !important;
+}
