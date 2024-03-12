@@ -20,7 +20,7 @@ const pages = [
     },
     {
         name: 'Film Industry',
-        url: '/film-industry'
+        url: '/film_industry'
     },
     {
         name: 'Business',
