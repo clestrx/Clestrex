@@ -9,7 +9,7 @@ const Index = () => {
     <Layout>
       <div className="max-w-[1024px] mx-auto px-4 mt-20">
         <div className="grid lg:grid-cols-2 md:grid-cols-1 p-8">
-          <div className="">
+          <div>
             <h2 className="text-5xl leading-16 font-normal mb-8">
               Discover the World of Celebrities
             </h2>
@@ -22,14 +22,14 @@ const Index = () => {
             <div className="grid grid-cols-3">
               <div className="grid grid-cols-1 md:grid-cols-3">
                 <div className="flex justify-center ...">
-                  <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kycyn6r2 svg [data-color="1"]
+                  {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kycyn6r2 svg [data-color="1"]
                     #comp-kycyn6r2 svg [data-color="2"]</style></defs>
                     <g>
                       <path d="M158.026 23.5H41.974C31.771 23.5 23.5 31.771 23.5 41.974v116.052c0 10.203 8.271 18.474 18.474 18.474h116.052c10.203 0 18.474-8.271 18.474-18.474V41.974c0-10.203-8.271-18.474-18.474-18.474z" fill="#111010" data-color="1"></path>
                       <path d="M133.217 75.772h-6.588c0-14.683-11.945-26.629-26.629-26.629S73.37 61.089 73.37 75.772h-6.588c0-18.316 14.901-33.217 33.217-33.217 18.317 0 33.218 14.901 33.218 33.217z" fill="#FFFFFF" data-color="2"></path>
                       <path d="M130.662 82.431H69.338c-5.391 0-9.762 3.947-9.762 8.816v55.381c0 4.869 4.371 8.816 9.762 8.816h61.324c5.391 0 9.762-3.947 9.762-8.816V91.247c0-4.868-4.371-8.816-9.762-8.816zm-11.973 35.105-22.531 22.335a.907.907 0 0 1-.638.262h-7.143c-.806 0-1.21-.975-.64-1.545l14.823-14.824c.57-.57.167-1.545-.64-1.545H81.934c-.807 0-1.21-.975-.64-1.545l22.812-22.813c-.149-.149 4.855-.124 7.834-.095.802.008 1.196.978.629 1.545l-15.131 15.131c-.57.57-.167 1.545.64 1.545h19.973c.81 0 1.212.979.638 1.549z" fill="#FFFFFF" data-color="2"></path>
                     </g>
-                  </svg>
+                  </svg> */}
                 </div>
                 <div className="lg:col-span-2 text-center md:text-left">
                   <p className="text-xs md:text-base">
@@ -39,7 +39,7 @@ const Index = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3">
                 <div className="flex justify-center ...">
-                  <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kycyn6r4 svg [data-color="1"]
+                  {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kycyn6r4 svg [data-color="1"]
                     #comp-kycyn6r4 svg [data-color="2"] </style></defs>
                     <g>
                       <path d="M158.026 23.5H41.974C31.771 23.5 23.5 31.771 23.5 41.974v116.052c0 10.203 8.271 18.474 18.474 18.474h116.052c10.203 0 18.474-8.271 18.474-18.474V41.974c0-10.203-8.271-18.474-18.474-18.474z" fill="#111010" data-color="1"></path>
@@ -49,7 +49,7 @@ const Index = () => {
                       <path d="m52.596 161.309-16.992-16.992c-1.422-1.422-.415-3.854 1.597-3.854h16.992a2.258 2.258 0 0 1 2.258 2.258v16.992c-.001 2.011-2.433 3.018-3.855 1.596z" fill="#FFFFFF" data-color="2"></path>
                       <path d="m147.404 161.309 16.992-16.992c1.422-1.422.415-3.854-1.597-3.854h-16.992a2.258 2.258 0 0 0-2.258 2.258v16.992c.001 2.011 2.433 3.018 3.855 1.596z" fill="#FFFFFF" data-color="2"></path>
                     </g>
-                  </svg>
+                  </svg> */}
                 </div>
                 <div className="col-span-2 text-center md:text-left">
                   <p className="text-xs md:text-base">
@@ -59,14 +59,14 @@ const Index = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3">
                 <div className="flex justify-center ...">
-                  <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kycyn6qt svg [data-color="1"]
+                  {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kycyn6qt svg [data-color="1"]
                     #comp-kycyn6qt svg [data-color="2"]</style></defs>
                     <g>
                       <path d="M158.026 23.5H41.974C31.771 23.5 23.5 31.771 23.5 41.974v116.052c0 10.203 8.271 18.474 18.474 18.474h116.052c10.203 0 18.474-8.271 18.474-18.474V41.974c0-10.203-8.271-18.474-18.474-18.474z" fill="#111010" data-color="1"></path>
                       <path d="M108.942 120.435v17.407c0 5.796-4.716 10.512-10.512 10.512H62.157c-5.796 0-10.512-4.715-10.512-10.512V101.57c0-5.796 4.716-10.512 10.512-10.512H98.43c5.796 0 10.512 4.715 10.512 10.512v2.151h7v-2.151c0-9.656-7.855-17.512-17.512-17.512H62.157c-9.656 0-17.512 7.856-17.512 17.512v36.272c0 9.656 7.855 17.512 17.512 17.512H98.43c9.656 0 17.512-7.856 17.512-17.512v-17.407h-7z" fill="#FFFFFF" data-color="2"></path>
                       <path d="M137.843 44.646H101.57c-9.656 0-17.512 7.855-17.512 17.511v17.045h7V62.157c0-5.796 4.716-10.511 10.512-10.511h36.272c5.796 0 10.512 4.715 10.512 10.511V98.43c0 5.796-4.716 10.512-10.512 10.512H101.57c-5.796 0-10.512-4.715-10.512-10.512v-2.514h-7v2.514c0 9.656 7.855 17.512 17.512 17.512h36.272c9.656 0 17.512-7.856 17.512-17.512V62.157c0-9.656-7.855-17.511-17.511-17.511z" fill="#FFFFFF" data-color="2"></path>
                     </g>
-                  </svg>
+                  </svg> */}
                 </div>
                 <div className="col-span-2 text-center md:text-left">
                   <p className="text-xs md:text-base">
@@ -78,7 +78,8 @@ const Index = () => {
           </div>
 
           <div>
-            <svg className="w-full" preserveAspectRatio="xMidYMid meet" data-bbox="7.556 20.992 184.886 158.016" viewBox="7.556 20.992 184.886 158.016" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kyjx1reo svg [data-color="1"]
+            <img src="/assets/images/untitled.png" alt="" />
+            {/* <svg className="w-full" preserveAspectRatio="xMidYMid meet" data-bbox="7.556 20.992 184.886 158.016" viewBox="7.556 20.992 184.886 158.016" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kyjx1reo svg [data-color="1"]
               #comp-kyjx1reo svg [data-color="2"]
               #comp-kyjx1reo svg [data-color="3"]
               #comp-kyjx1reo svg [data-color="4"]
@@ -323,7 +324,7 @@ const Index = () => {
                 <path d="M90.659 174.732c.067.129.149.215.136.28-.013.063-.134.152-.192.142-.062-.011-.147-.126-.145-.194.002-.063.104-.124.201-.228z" fill="#000000" data-color="2"></path>
                 <path d="M81.837 166.47c.078.138.165.223.151.285-.014.062-.122.12-.2.143-.028.008-.131-.1-.123-.14.016-.081.085-.151.172-.288z" fill="#000000" data-color="2"></path>
               </g>
-            </svg>
+            </svg> */}
           </div>
         </div>
       </div>
@@ -348,9 +349,10 @@ const Index = () => {
       </div>
 
       <div className="max-w-[1024px] mx-auto px-4 mt-20">
-        <div className="grid lg:grid-cols-2 md:grid-cols-1 p-8">
+        <div className="grid lg:grid-cols-2 md:grid-cols-1 p-8 gap-[100px]">
           <div>
-            <svg preserveAspectRatio="xMidYMid meet" data-bbox="3.426 6.807 188.241 190.19" viewBox="3.426 6.807 188.241 190.19" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kyvbmqy6 svg [data-color="1"]
+            <img src="/assets/images/2.png" alt="" />
+            {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="3.426 6.807 188.241 190.19" viewBox="3.426 6.807 188.241 190.19" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kyvbmqy6 svg [data-color="1"]
               #comp-kyvbmqy6 svg [data-color="2"]
               #comp-kyvbmqy6 svg [data-color="3"]
               #comp-kyvbmqy6 svg [data-color="5"]
@@ -556,7 +558,7 @@ const Index = () => {
                 <path d="M165.491 33.866a.385.385 0 0 0-.223.262c-.03.246.251.51.495.456.12-.027.213-.18.285-.245-.044-.341-.307-.551-.557-.473z" fill="#000000" data-color="2"></path>
                 <path d="M172.752 12.945c-9.987 0-18.112 8.125-18.112 18.112s8.125 18.112 18.112 18.112c9.987 0 18.112-8.125 18.112-18.112s-8.125-18.112-18.112-18.112zm0 .791c6.5 0 12.168 3.603 15.131 8.913-.082.016-.164.031-.249.055a7.678 7.678 0 0 0-2.394 1.143c-.155-.555-.277-1.032-.422-1.502-.443-1.441-1.269-2.575-2.568-3.381-2.015-1.25-4.177-1.517-6.451-1.044-1.691.352-3.099 1.233-4.297 2.472-.238.246-.404.594-.737.689-.28-.822-.511-1.607-.818-2.362-.292-.722-.826-1.26-1.497-1.659-.447-.266-.933-.387-1.421-.246-1.284.37-2.471.915-3.214 2.121-1.336 2.166-1.177 4.326.084 6.444.52.874 1.143 1.688 2.044 2.205l-3.033 5.726c-.248-.064-.576-.102-.864-.23-1.502-.662-3-1.337-4.49-2.028-.7-.325-1.364-.727-2.071-1.032.54-9.068 8.067-16.284 17.267-16.284zm-17.303 17.682c.065-.12.169-.226.284-.378.188.121.382.224.572.34.391.239.781.479 1.181.695.686.37 1.391.699 2.106 1.005a29.407 29.407 0 0 0 3.198 1.157c0 .451-.026.843.006 1.23.021.255.038.514.064.77.03.299.071.595.152.879.012.043.035.078.048.12.141.456.351.86.6 1.234a5.492 5.492 0 0 0 1.932 1.76c.773.429 1.595.775 2.42 1.097.026.01.047.023.072.033.067.004.387.136.459.212.18.098.349.21.502.336.233.192.424.434.586.714.04.069.089.127.124.202.167.357.371.699.585 1.03.063.098.179.195.331.323.067.058.125.105.217.189-.066-.537-.039-.881-.154-1.167-.582-1.435-1.281-2.772-3.033-3.046-.225-.035-.444-.121-.666-.179a5.34 5.34 0 0 1-2.539-1.457c-1.071-1.107-1.496-2.477-1.219-3.996.207-1.14.687-2.193 1.345-3.229.6.197.9-.189 1.125-.655.183-.377.528-.832.439-1.153-.186-.676.079-1.041.513-1.447 1.177.413 2.336.31 3.497.067-.083.952.024 1.884.231 2.817.38 1.715 1.044 3.33 1.674 4.958.279.719.728 1.321 1.309 1.832.713.629 1.352 1.352 2.34 1.64-.19 1.434-.585 2.716-1.212 3.918a6.216 6.216 0 0 1-.901 1.291c-.627.688-1.418 1.053-2.373.992-.065-.004-.108-.023-.169-.03-1.01-.112-1.493-.568-1.676-1.632-.028-.164-.056-.33-.098-.49-.016-.06-.027-.123-.051-.179-.041-.093-.126-.176-.224-.268-.061-.057-.124-.112-.196-.188-.112.272-.23.439-.246.616-.094 1.026.34 1.769 1.083 2.332.119.091.227.188.363.27.245.147.516.252.751.365-.009.063-.012.124-.021.187-.026.177-.038.354-.061.531-.05.388-.095.776-.132 1.163-8.414-1.058-14.959-8.16-15.138-16.811zm17.303 16.961c-.512 0-1.017-.033-1.518-.077.092-.608.259-1.202.392-1.762.09-.062.179-.118.273-.189 1.049-.283 1.762-.646 2.353-1.229.048-.048.103-.086.15-.137a6.43 6.43 0 0 0 .698-.946c.057-.09.114-.168.171-.266.251-.433.456-.885.639-1.345.125-.314.241-.632.344-.954.097-.303.186-.607.27-.915.074-.273.16-.547.245-.834l.033-.112.24.002c.277.003.538.007.791-.006.327-.017.662-.027.979-.102 2.35-.557 4.398-1.507 6.122-2.878.341-.271.677-.549.993-.854 1.145-1.11 2.114-2.449 2.893-4.034.145-.296.33-.577.438-.885.135-.389.409-.563.771-.68.02.293.045.585.045.883-.001 9.549-7.772 17.32-17.322 17.32z" fill="#000000" data-color="2"></path>
               </g>
-            </svg>
+            </svg> */}
           </div>
 
           <div className="">
@@ -569,7 +571,8 @@ const Index = () => {
             <div className="grid grid-cols-3">
               <div className="grid grid-cols-1 md:grid-cols-3">
                 <div className="flex justify-center ...">
-                  <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true"><defs><style>#comp-kyvcofhk svg [data-color="1"]
+                  <img src="/assets/images/icon_1.png" alt="" />
+                  {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true"><defs><style>#comp-kyvcofhk svg [data-color="1"]
                     #comp-kyvcofhk svg [data-color="2"] </style></defs>
                     <g>
                       <path d="M158.026 23.5H41.974C31.771 23.5 23.5 31.771 23.5 41.974v116.052c0 10.203 8.271 18.474 18.474 18.474h116.052c10.203 0 18.474-8.271 18.474-18.474V41.974c0-10.203-8.271-18.474-18.474-18.474z" fill="#111010" data-color="1"></path>
@@ -579,7 +582,7 @@ const Index = () => {
                       <path d="M159.123 111.97V88.03a3.81 3.81 0 0 0-3.811-3.811h-23.94a3.81 3.81 0 0 0-3.811 3.811v23.94a3.81 3.81 0 0 0 3.811 3.811h23.94a3.81 3.81 0 0 0 3.811-3.811z" fill="#FFFFFF" data-color="2"></path>
                       <path d="M72.439 111.97V88.03a3.81 3.81 0 0 0-3.811-3.811h-23.94a3.81 3.81 0 0 0-3.811 3.811v23.94a3.81 3.81 0 0 0 3.811 3.811h23.94a3.81 3.81 0 0 0 3.811-3.811z" fill="#FFFFFF" data-color="2"></path>
                     </g>
-                  </svg>
+                  </svg> */}
                 </div>
                 <div className="lg:col-span-2 text-center md:text-left">
                   <p className="text-xs md:text-base">
@@ -589,14 +592,14 @@ const Index = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3">
                 <div className="flex justify-center ...">
-                  <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kyvcofjn svg [data-color="1"]
+                  {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kyvcofjn svg [data-color="1"]
                     #comp-kyvcofjn svg [data-color="2"]</style></defs>
                     <g>
                       <path d="M158.026 23.5H41.974C31.771 23.5 23.5 31.771 23.5 41.974v116.052c0 10.203 8.271 18.474 18.474 18.474h116.052c10.203 0 18.474-8.271 18.474-18.474V41.974c0-10.203-8.271-18.474-18.474-18.474z" fill="#111010" data-color="1"></path>
                       <path d="M152.833 75.899H57.698c-5.816 0-10.53 5.445-10.53 12.161v46.514c0 6.717 4.715 12.162 10.531 12.162h84.604c5.816 0 10.531-5.445 10.531-12.162V75.899z" fill="#FFFFFF" data-color="2"></path>
                       <path d="M145.533 55.918h-23.132c-4.031 0-7.299 3.774-7.299 8.43v5.215h37.73v-5.215c.001-4.655-3.267-8.43-7.299-8.43z" fill="#FFFFFF" data-color="2"></path>
                     </g>
-                  </svg>
+                  </svg> */}
                 </div>
                 <div className="col-span-2 text-center md:text-left">
                   <p className="text-xs md:text-base">
@@ -606,14 +609,14 @@ const Index = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3">
                 <div className="flex justify-center ...">
-                  <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true"><defs><style>#comp-kyvcoflc svg [data-color="1"]
+                  {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true"><defs><style>#comp-kyvcoflc svg [data-color="1"]
                     #comp-kyvcoflc svg [data-color="2"] </style></defs>
                     <g>
                       <path d="M158.026 23.5H41.974C31.771 23.5 23.5 31.771 23.5 41.974v116.052c0 10.203 8.271 18.474 18.474 18.474h116.052c10.203 0 18.474-8.271 18.474-18.474V41.974c0-10.203-8.271-18.474-18.474-18.474z" fill="#111010" data-color="1"></path>
                       <path d="m103.841 76.805-57.106 71.716c-2.334 3.134 1.611 7.078 4.744 4.744l71.716-57.106c2.688-2.002 2.974-5.924.603-8.294l-11.664-11.664a5.496 5.496 0 0 0-8.293.604z" fill="#FFFFFF" data-color="2"></path>
                       <path d="M144.116 76.927c5.811-5.811 9.855-30.897 9.855-30.897s-25.087 4.045-30.897 9.855c-5.811 5.811-5.811 15.232 0 21.042 5.81 5.81 15.231 5.81 21.042 0z" fill="#FFFFFF" data-color="2"></path>
                     </g>
-                  </svg>
+                  </svg> */}
                 </div>
                 <div className="col-span-2 text-center md:text-left">
                   <p className="text-xs md:text-base">
@@ -707,7 +710,8 @@ const Index = () => {
         </div>
 
         <div>
-          <svg preserveAspectRatio="xMidYMid meet" data-bbox="5.562 43.898 188.88 112.161" viewBox="5.562 43.898 188.88 112.161" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true"><defs><style>#comp-kyk64ng6 svg [data-color="1"]
+          <img src="/assets/images/3.png" alt="" />
+          {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="5.562 43.898 188.88 112.161" viewBox="5.562 43.898 188.88 112.161" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true"><defs><style>#comp-kyk64ng6 svg [data-color="1"]
             #comp-kyk64ng6 svg [data-color="2"]
             #comp-kyk64ng6 svg [data-color="3"]
             #comp-kyk64ng6 svg [data-color="4"]
@@ -1047,7 +1051,7 @@ const Index = () => {
               <path d="M37.07 127.08c.147.041.301.245.292.416-.002.034-.097.099-.135.09-.163-.037-.3-.232-.288-.407.003-.036.085-.066.131-.099z" fill="#EBEBEB" data-color="5"></path>
               <path d="M37.457 131.91c-.059.065-.098.148-.151.23.186.224.365.435.538.651.415.515.608.678-.345 1.015-.149-.121-.324-.248-.478-.397-.058-.056-.119-.189-.092-.24.149-.277.105-.52-.016-.8-.113-.262.061-.604.358-.776.171-.099.247.25.186.317z" fill="#EBEBEB" data-color="5"></path>
             </g>
-          </svg>
+          </svg> */}
         </div>
       </div>
     </Layout>

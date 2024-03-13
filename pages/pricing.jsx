@@ -1,18 +1,14 @@
 'use client';
-import React from 'react'
-import Button from '@mui/material/Button';
-import { styled } from '@mui/material/styles';
+import React, { useState } from 'react';
 import BootstrapDialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import Typography from '@mui/material/Typography';
 import Layout from '../src/layouts/Layout';
 
-const page = () => {
-    const [open, setOpen] = React.useState(false);
+const Pricing = () => {
+    const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -109,11 +105,15 @@ const page = () => {
                                 </div>
                                 <div className='second_half p-7 pb-16 min-h-[211px]'>
                                     <div className='flex mt-4'>
-                                        <span><svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg></span>
+                                        <span>
+                                            {/* <svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg> */}
+                                        </span>
                                         <span className='text-[13px] pl-2'>Free profile on Clestrix </span>
                                     </div>
                                     <div className='flex mt-5'>
-                                        <span><svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg></span>
+                                        <span>
+                                            {/* <svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg> */}
+                                        </span>
                                         <span className='text-[13px] pl-2'>3 free edits </span>
                                     </div>
                                 </div>
@@ -131,11 +131,15 @@ const page = () => {
                                 </div>
                                 <div className='second_half p-7 pb-16 min-h-[211px]'>
                                     <div className='flex mt-4'>
-                                        <span><svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg></span>
+                                        <span>
+                                            {/* <svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg> */}
+                                        </span>
                                         <span className='text-[13px] pl-2'>Personalized Website </span>
                                     </div>
                                     <div className='flex mt-5'>
-                                        <span><svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg></span>
+                                        <span>
+                                            {/* <svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg> */}
+                                        </span>
                                         <span className='text-[13px] pl-2'>3 lifetime edits </span>
                                     </div>
                                 </div>
@@ -155,15 +159,21 @@ const page = () => {
                                 </div>
                                 <div className='second_half p-7 pb-16 min-h-[211px]'>
                                     <div className='flex mt-4'>
-                                        <span><svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg></span>
+                                        <span>
+                                            {/* <svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg> */}
+                                        </span>
                                         <span className='text-[13px] pl-2'>Free profile on Clestrix </span>
                                     </div>
                                     <div className='flex mt-5'>
-                                        <span><svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg></span>
+                                        <span>
+                                            {/* <svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg> */}
+                                        </span>
                                         <span className='text-[13px] pl-2'>Search Engine Optimization</span>
                                     </div>
                                     <div className='flex mt-5'>
-                                        <span><svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg></span>
+                                        <span>
+                                            {/* <svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg> */}
+                                        </span>
                                         <span className='text-[13px] pl-2'>Lifetime free management</span>
                                     </div>
                                 </div>
@@ -176,4 +186,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Pricing

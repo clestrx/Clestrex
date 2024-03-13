@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PageBanner from "../../src/components/PageBanner";
 import Layout from "../../src/layouts/Layout";
 
 import Accordion from '@mui/material/Accordion';
@@ -11,10 +10,7 @@ import Link from "next/link";
 import { useAuth } from "../../src/context/AuthContext";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
-import { getOfferByPartAction } from "../../src/store/card-offers/asyncActions";
 import { CircularProgress } from "@mui/material";
-import { addOrRemoveWishlistAction, getAllWishlistAction } from "../../src/store/wishlist/asyncActions";
-import Custom404 from "../../src/components/Custom404";
 
 const tags = [
   'Credit Cards Millenia',
@@ -64,10 +60,10 @@ const ProviderOffers = () => {
     if (router?.query?.url_query && router?.query?.url_query !== '') {
       setTitle(router?.query?.url_query.replace(/[^-\w\s]/g, '').replace(/-+/g, ' ').toLowerCase().trim().replace(/\s+/g, ' '));
       setLoading(true);
-      dispatch(getOfferByPartAction({
-        type: 'product',
-        search_query: router?.query?.url_query
-      }));
+      // dispatch(getOfferByPartAction({
+      //   type: 'product',
+      //   search_query: router?.query?.url_query
+      // }));
     }
   }, [router?.query]);
 
@@ -84,7 +80,7 @@ const ProviderOffers = () => {
 
   useEffect(() => {
     if (wishlistAddRemoveData?.data?.status && accessToken) {
-      dispatch(getAllWishlistAction());
+      // dispatch(getAllWishlistAction());
     }
   }, [wishlistAddRemoveData]);
 
@@ -97,7 +93,7 @@ const ProviderOffers = () => {
 
   const addOrRemoveWishlist = (offerID) => {
     if (accessToken) {
-      dispatch(addOrRemoveWishlistAction({ offer_id: offerID }));
+      // dispatch(addOrRemoveWishlistAction({ offer_id: offerID }));
     } else {
       setOpenLogin(true);
     }
@@ -105,7 +101,7 @@ const ProviderOffers = () => {
 
   useEffect(() => {
     if (accessToken) {
-      dispatch(getAllWishlistAction());
+      // dispatch(getAllWishlistAction());
     } else {
       setWishlist(null);
     }
@@ -116,16 +112,14 @@ const ProviderOffers = () => {
     setOpenShare(true);
   }
 
-  if (title === '404') {
-    return (
-      <Custom404 />
-    );
-  }
+  // if (title === '404') {
+  //   return (
+  //     <Custom404 />
+  //   );
+  // }
 
   return (
     <Layout>
-      <PageBanner title={title} pageName={title} image={'/assets/images/bg/category.jpg'} />
-
       <div class="container home-offers-container-one mt-35">
         <div class="row">
           {loading &&

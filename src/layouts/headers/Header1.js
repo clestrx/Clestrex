@@ -24,10 +24,10 @@ const pages = [
     },
     {
         name: 'Business',
-        url: '/business'
+        url: '/profile_description'
     },
 ];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header1 = () => {
     const scrolltoHash = function (element_id) {
@@ -54,7 +54,7 @@ const Header1 = () => {
     };
 
     return (
-        <AppBar position="static" sx={{ backgroundColor: 'transparent' }}>
+        <AppBar position="static" sx={{ backgroundColor: 'transparent' }} className="max-w-[1024px] mx-auto">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
@@ -80,10 +80,10 @@ const Header1 = () => {
                     >
                         Clestrx
                     </Typography>
-                    <div className="hidden md:flex">
+                    {/* <div className="hidden md:flex">
                         <h1 className='text-[23px] font-semibold leading-7'>Clestrix</h1>
                         <p className='text-[13px]'>Discover the World of Celebrities.</p>
-                    </div>
+                    </div> */}
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
@@ -155,10 +155,10 @@ const Header1 = () => {
                     >
                         Clestrx
                     </Typography>
-                    <div className="flex md:hidden">
+                    {/* <div className="flex md:hidden">
                         <h1 className='text-[23px] font-semibold leading-7'>Clestrix</h1>
                         <p className='text-[13px]'>Discover the World of Celebrities.</p>
-                    </div>
+                    </div> */}
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
                         {pages.map((page, index) => {
                             return (
@@ -177,7 +177,7 @@ const Header1 = () => {
                             <Button sx={{ my: 2, display: 'block' }}>Contact</Button>
                         </a>
                         <a href="/pricing" className='flex justify-center items-center'>
-                            <button className='join_clestrx join_clestrx_2'>Join Clestrx</button>
+                            <button className='join_clestrx join_clestrx_2 ml-4'>Join Clestrx</button>
                         </a>
                     </Box>
 

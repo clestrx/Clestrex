@@ -70,6 +70,7 @@ body {
 
 .MuiBox-root button{
   color: black;
+  margin-right: 8px;
 }
 
 .first_half{
@@ -86,4 +87,36 @@ body {
 
 .css-ueuitw-MuiPaper-root-MuiAppBar-root{
   box-shadow: none !important;
+}
+
+.custom_max_width{
+  max-width: fit-content;
+}
+
+.explore_your{
+  letter-spacing: 2px;
+}
+
+.img_class{
+  overflow: hidden;
+}
+
+.img_class img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.img_class:hover img {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.first_div{
+  background-color: black;
+}
+
+.third_div{
+  background-color: #FFF9EA;
 }
