@@ -16,7 +16,6 @@
     "@mui/icons-material": "^5.15.3",
     "@mui/material": "^5.15.1",
     "@mui/styled-engine-sc": "^6.0.0-alpha.9",
-    "@reduxjs/toolkit": "^2.0.1",
     "axios": "^1.6.2",
     "fs": "^0.0.1-security",
     "moment": "^2.30.0",

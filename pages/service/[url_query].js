@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../../src/layouts/Layout";
-
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';

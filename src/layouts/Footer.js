@@ -10,11 +10,11 @@ const Footer = () => {
                     <div className=''>
                         <div className='flex items-center'>
                             <div>
-                                <svg className="hidden md:flex mr-1" preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="40" width="40" xmlns="http://www.w3.org/2000/svg" data-type="color" role="img" aria-label="Homepage"><defs><style>#comp-kybbhi6c svg [data-color="1"] </style></defs>
+                                {/* <svg className="mr-1" preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="40" width="40" xmlns="http://www.w3.org/2000/svg" data-type="color" role="img" aria-label="Homepage"><defs><style>#comp-kybbhi6c svg [data-color="1"] </style></defs>
                                     <g>
                                         <path d="M158.026 23.5H41.974C31.771 23.5 23.5 31.771 23.5 41.974v116.052c0 10.203 8.271 18.474 18.474 18.474h116.052c10.203 0 18.474-8.271 18.474-18.474V41.974c0-10.203-8.271-18.474-18.474-18.474zM62.37 125.347c-8.382 1.206-16.154-4.611-17.36-12.992s4.611-16.154 12.992-17.36c8.382-1.206 16.154 4.611 17.36 12.992s-4.61 16.154-12.992 17.36zm89.787-43.89-47.193 63.061a14.978 14.978 0 0 1-12.021 6.014c-3.127 0-6.279-.974-8.976-2.992-6.633-4.964-7.985-14.364-3.022-20.997l47.193-63.061c4.964-6.633 14.363-7.985 20.997-3.022 6.632 4.964 7.985 14.365 3.022 20.997z" fill="#111010" data-color="1"></path>
                                     </g>
-                                </svg>
+                                </svg> */}
                             </div>
                             <div className='pl-2'>
                                 <h1 className='text-[23px] font-semibold leading-7'>Clestrix</h1>
@@ -39,10 +39,10 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className='pl-14'>
+                    <div className='pl-0 lg:pl-14'>
                         <div>
-                            <h1 className='text-[20px] font-semibold'>Quick Links</h1>
-                            <div className="grid lg:grid-cols-2 md:grid-cols-2 mt-6">
+                            <h1 className='text-[20px] font-semibold mt-12 lg:mt-0'>Quick Links</h1>
+                            <div className="grid grid-cols-2 mt-6">
                                 <a href="/" className='py-2 underline'>Home</a>
                                 <a href="/" className='py-2 underline'>Sports</a>
                                 <a href="/" className='py-2 underline'>About Us</a>
@@ -60,8 +60,8 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="pl-4" id='contact_us'>
-                        <h1 className='text-[20px] font-semibold mb-8'>Contact Us</h1>
+                    <div className="pl-0 lg:pl-4" id='contact_us'>
+                        <h1 className='text-[20px] font-semibold mb-8 mt-12 lg:mt-0'>Contact Us</h1>
                         <form action="#" method="post" className="space-y-6">
                             <div className="flex space-x-4">
                                 <div className="w-1/2">
