@@ -117,7 +117,7 @@ const profile_description = () => {
                         </div>
                         <div className='flex justify-center md:justify-start'>
                             <div>
-                                <div className='w-full max-w-[370px] flex flex-col mb-5 border-2 border-black rounded-md overflow-hidden'>
+                                <div className='w-full max-w-[370px] flex flex-col mb-6 border-2 border-black rounded-md overflow-hidden'>
                                     <div className='first_div flex justify-center py-1 rounded'>
                                         <span className='text-white'>Education</span>
                                     </div>
@@ -141,7 +141,7 @@ const profile_description = () => {
                                     </div>
                                 </div>
 
-                                <div className='w-full max-w-[370px] flex flex-col mb-5 border-2 border-black rounded-md overflow-hidden'>
+                                <div className='w-full max-w-[370px] flex flex-col mb-6 border-2 border-black rounded-md overflow-hidden'>
                                     <div className='first_div flex justify-center py-1 rounded'>
                                         <span className='text-white'>Total Income</span>
                                     </div>
@@ -157,7 +157,7 @@ const profile_description = () => {
                                     </div>
                                 </div>
 
-                                <div className='w-full max-w-[370px] flex flex-col mb-5 border-2 border-black rounded-md overflow-hidden'>
+                                <div className='w-full max-w-[370px] flex flex-col border-2 border-black rounded-md overflow-hidden'>
                                     <div className='first_div flex justify-center py-1 rounded'>
                                         <span className='text-white'>Collections</span>
                                     </div>
@@ -166,7 +166,7 @@ const profile_description = () => {
                                             <span className='text-[15px]'>Cars</span>
                                             <span className='text-[15px]'>Sai Pallavi Senthamarai</span>
                                         </div>
-                                        <div className="grid grid-cols-2 mb-3">
+                                        <div className="grid grid-cols-2 mb-4">
                                             <span className='text-[15px]'>Watches</span>
                                             <span className='text-[15px]'>Actress, Doctor</span>
                                         </div>

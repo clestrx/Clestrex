@@ -1,11 +1,12 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import BootstrapDialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Layout from '../src/layouts/Layout';
+import { Typography } from '@mui/material';
 
 const Pricing = () => {
     const [open, setOpen] = useState(false);
@@ -17,6 +18,36 @@ const Pricing = () => {
         setOpen(false);
     };
 
+    const [active, setActive] = useState({
+        one: false,
+        two: true,
+        three: false,
+    });
+
+    const togglePriceCard = (card, value) => {
+        setActive({
+            ...active,
+            [card]: value
+        });
+    }
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (Number(window.innerWidth) <= 768) {
+                setIsMobile(true);
+            } else {
+                setIsMobile(false);
+            }
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <>
             <Layout>
@@ -25,6 +56,7 @@ const Pricing = () => {
                         onClose={handleClose}
                         aria-labelledby="customized-dialog-title"
                         open={open}
+                        maxWidth="lg"
                     >
                         <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
                             Contact Us
@@ -42,10 +74,10 @@ const Pricing = () => {
                             <CloseIcon />
                         </IconButton>
                         <DialogContent dividers>
-                            <div className="max-w-[1024px] mx-auto px-4 mt-20">
+                            <div className="max-w-[1024px] mx-auto px-4 mt-7">
                                 <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 p-8 gap-14">
                                     <div>
-                                        <img src="/assets/images/White And Yellow Colorful Web Designer Instagram Post.webp" alt="" />
+                                        <img className='w-[483px] h-[483px]' src="/assets/images/White And Yellow Colorful Web Designer Instagram Post.webp" alt="" />
                                     </div>
                                     <div>
                                         <form action="#" method="post" className="space-y-6">
@@ -89,94 +121,140 @@ const Pricing = () => {
                     </BootstrapDialog>
                 </React.Fragment>
 
-                <div className='flex'>
-                    <div className="max-w-[1024px] mx-auto px-4 mt-20">
-                        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 p-8">
-                            <div className='rounded-lg overflow-hidden mr-7 min-w-[285px]'>
-                                <div className='first_half p-7 pt-9'>
+                <div className='w-full bg-[#ffd7ef] h-[325px] pt-[200px] mt-[-98px] flex justify-center'>
+                    <div className='w-[250px] md:w-full text-center'>
+                        <Typography variant='caption' className="text-[15px]">
+                            Use this area to describe one of your memberships.
+                        </Typography>
+                    </div>
+                </div>
+                <div className='w-full bg-[#ffd7ef] h-[75px]'>
+                    <img src="/assets/images/header-white-curve.png" alt="" className='header-white-curve' />
+                </div>
+                <div className='flex mt-[-125px]'>
+                    <div className="max-w-[1024px] mx-auto px-4 z-10">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 md:gap-8">
+                            <div className='min-w-[100%] md:min-w-[285px] order-2 lg:order-1 mb-8 lg:mb-0'>
+                                <div className='rounded-t-lg first_half p-7 pt-9'>
                                     <div className='text-[20px]'>Free</div>
                                     <span className='font-semibold text-[18px] relative top-[-50px]'>₹</span>
                                     <span className='font-semibold text-[68px]'>0</span>
                                     <div className='text-[12px] mt-6'>Free Plan</div>
-                                    <button className="mt-5 bg-black text-white font-bold text-[20px] py-3 w-full rounded-md transition duration-300 hover:bg-yellow-500 hover:text-black"
+                                    <button className="mt-5 bg-black text-white font-bold text-[20px] py-3 w-full rounded-md transition duration-300 hover:bg-[#4c390a]"
                                         onClick={handleClickOpen}>
                                         Get Started
                                     </button>
                                 </div>
-                                <div className='second_half p-7 pb-16 min-h-[211px]'>
-                                    <div className='flex mt-4'>
-                                        <span>
-                                            {/* <svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg> */}
-                                        </span>
-                                        <span className='text-[13px] pl-2'>Free profile on Clestrix </span>
+                                <div className="rounded-b-lg second_half">
+                                    <div className={`priceCard ${!active?.one && isMobile ? 'priceCardHide' : ''}`}>
+                                        <div className='flex mt-4'>
+                                            <span>
+                                                <img src="/assets/images/check_icon.png" alt="" />
+                                            </span>
+                                            <span className='text-[13px] pl-2'>Free profile on Clestrix </span>
+                                        </div>
+                                        <div className='flex mt-5'>
+                                            <span>
+                                                <img src="/assets/images/check_icon.png" alt="" />
+                                            </span>
+                                            <span className='text-[13px] pl-2'>3 free edits </span>
+                                        </div>
                                     </div>
-                                    <div className='flex mt-5'>
-                                        <span>
-                                            {/* <svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg> */}
-                                        </span>
-                                        <span className='text-[13px] pl-2'>3 free edits </span>
-                                    </div>
+                                    {isMobile &&
+                                        <div onClick={() => togglePriceCard('one', !active.one)} className={`flex mt-[0.5px] justify-center p-2 icon_div ${!active?.one ? 'icon_div' : 'pink_icon_div'}`}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" className='w-[14px] h-[14px]' viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" /></svg>
+                                        </div>
+                                    }
                                 </div>
                             </div>
 
-                            <div className='rounded-lg overflow-hidden mr-7 min-w-[285px]'>
-                                <div className='bg-black p-7 pt-9'>
+                            <div className='min-w-[100%] md:min-w-[285px] order-1 lg:order-2 mb-8 lg:mb-0'>
+                                <div className='rounded-t-lg bg-black p-7 pt-9'>
+                                    <div className='best_value'>
+                                        <button className='first_half border border-black px-2 py-1 font-bold'>Best Value</button>
+                                    </div>
                                     <div className='text-[20px] text-white'>Standard</div>
                                     <span className='font-semibold text-white text-[18px] relative top-[-50px]'>₹</span>
                                     <span className='font-semibold text-white text-[68px]'>4,999</span>
-                                    <button className="mt-[62px] bg-white text-black font-bold text-[20px] py-3 w-full rounded-md transition duration-300 hover:bg-yellow-500 hover:text-black"
+                                    <button className="mt-[62px] bg-white text-black font-bold text-[20px] py-3 w-full rounded-md transition duration-300 hover:bg-[#b3b3b3] hover:text-black"
                                         onClick={handleClickOpen}>
                                         Get Started
                                     </button>
                                 </div>
-                                <div className='second_half p-7 pb-16 min-h-[211px]'>
-                                    <div className='flex mt-4'>
-                                        <span>
-                                            {/* <svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg> */}
-                                        </span>
-                                        <span className='text-[13px] pl-2'>Personalized Website </span>
+                                <div className='rounded-b-lg second_half'>
+                                    <div className={`priceCard ${!active?.two && isMobile ? 'priceCardHide' : ''}`}>
+                                        <div className='flex mt-4'>
+                                            <span>
+                                                <img src="/assets/images/check_icon.png" alt="" />
+                                            </span>
+                                            <span className='text-[13px] pl-2'>Personalized Website </span>
+                                        </div>
+                                        <div className='flex mt-5'>
+                                            <span>
+                                                <img src="/assets/images/check_icon.png" alt="" />
+                                            </span>
+                                            <span className='text-[13px] pl-2'>3 lifetime edits </span>
+                                        </div>
                                     </div>
-                                    <div className='flex mt-5'>
-                                        <span>
-                                            {/* <svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg> */}
-                                        </span>
-                                        <span className='text-[13px] pl-2'>3 lifetime edits </span>
-                                    </div>
+                                    {isMobile &&
+                                        <div onClick={() => togglePriceCard('two', !active.two)} className={`flex mt-[0.5px] justify-center p-2 icon_div ${!active?.two ? 'black_icon_div' : 'pink_icon_div'}`}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" className='w-[14px] h-[14px]' viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" /></svg>
+                                        </div>
+                                    }
                                 </div>
                             </div>
 
-                            <div className='rounded-lg overflow-hidden mr-7 min-w-[285px]'>
-                                <div className='first_half p-7 pt-9'>
+                            <div className='min-w-[100%] md:min-w-[285px] order-3 lg:order-3 mb-8 lg:mb-0'>
+                                <div className='rounded-t-lg first_half p-7 pt-9'>
                                     <div className='text-[20px]'>Premium</div>
                                     <span className='font-semibold text-[18px] relative top-[-50px]'>₹</span>
                                     <span className='font-semibold text-[68px]'>49</span>
                                     <div className='text-[12px]'>Every month</div>
                                     <div className='text-[12px] mt-3'>7 day free trial</div>
-                                    <button className="mt-4 bg-black text-white font-bold text-[20px] py-3 w-full rounded-md transition duration-300 hover:bg-yellow-500 hover:text-black"
+                                    <button className="mt-4 bg-black text-white font-bold text-[20px] py-3 w-full rounded-md transition duration-300 hover:bg-[#4c390a]"
                                         onClick={handleClickOpen}>
                                         Start Free Trial
                                     </button>
                                 </div>
-                                <div className='second_half p-7 pb-16 min-h-[211px]'>
-                                    <div className='flex mt-4'>
-                                        <span>
-                                            {/* <svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg> */}
-                                        </span>
-                                        <span className='text-[13px] pl-2'>Free profile on Clestrix </span>
+                                <div className='rounded-b-lg second_half'>
+                                    <div className={`priceCard ${!active?.three && isMobile ? 'priceCardHide' : ''}`}>
+                                        <div className='flex mt-4'>
+                                            <span>
+                                                <img src="/assets/images/check_icon.png" alt="" />
+                                            </span>
+                                            <span className='text-[13px] pl-2'>Free profile on Clestrix </span>
+                                        </div>
+                                        <div className='flex mt-5'>
+                                            <span>
+                                                <img src="/assets/images/check_icon.png" alt="" />
+                                            </span>
+                                            <span className='text-[13px] pl-2'>Search Engine Optimization</span>
+                                        </div>
+                                        <div className='flex mt-5'>
+                                            <span>
+                                                <img src="/assets/images/check_icon.png" alt="" />
+                                            </span>
+                                            <span className='text-[13px] pl-2'>Lifetime free management</span>
+                                        </div>
                                     </div>
-                                    <div className='flex mt-5'>
-                                        <span>
-                                            {/* <svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg> */}
-                                        </span>
-                                        <span className='text-[13px] pl-2'>Search Engine Optimization</span>
-                                    </div>
-                                    <div className='flex mt-5'>
-                                        <span>
-                                            {/* <svg role="img" width="21" height="21" viewBox="0 0 24 24"><path class="s__7q13bT" fill-rule="evenodd" d="M10.785 14.961L8 12.176L8.707 11.469L10.785 13.547L15.293 9.039L16 9.746L10.785 14.961ZM12 4C7.582 4 4 7.582 4 12C4 16.418 7.582 20 12 20C16.419 20 20 16.418 20 12C20 7.582 16.419 4 12 4Z"></path></svg> */}
-                                        </span>
-                                        <span className='text-[13px] pl-2'>Lifetime free management</span>
-                                    </div>
+                                    {isMobile &&
+                                        <div onClick={() => togglePriceCard('three', !active.three)} className={`flex mt-[0.5px] justify-center p-2 icon_div ${!active?.three ? 'icon_div' : 'pink_icon_div'}`}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" className='w-[14px] h-[14px]' viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" /></svg>
+                                        </div>
+                                    }
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='first_half p-12 mb-[0.5px] mt-8 pointer-events-none'>
+                    <div className="max-w-[1024px] mx-auto px-4">
+                        <div className='grid grid-cols-2'>
+                            <div className='z-10 mt-[-110px] md:mt-[-147px] order-2 lg:order-1'>
+                                <img className='h-[95px] w-[auto] md:h-[130px] w-[auto]' src="/assets/images/img_4.png" alt="" />
+                            </div>
+                            <div className='z-10 mt-[-110px] md:mt-[-147px] flex justify-end order-1 lg:order-2'>
+                                <img className='h-[95px] w-[auto] md:h-[130px] w-[auto]' src="/assets/images/img_5.png" alt="" />
                             </div>
                         </div>
                     </div>

@@ -23,6 +23,7 @@ const Index = () => {
               <div className="order-3 lg:order-4 grid grid-cols-1 md:grid-cols-3">
                 <div className="flex">
                   <div>
+                    <img src="/assets/images/icon1.png" className="h-[35px] w-[35px] mr-1" alt="" />
                     {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kycyn6r2 svg [data-color="1"]
                       #comp-kycyn6r2 svg [data-color="2"]</style></defs>
                       <g>
@@ -38,6 +39,7 @@ const Index = () => {
                 </div>
                 <div className="flex">
                   <div>
+                    <img src="/assets/images/icon2.png" className="h-[35px] w-[35px] mr-1" alt="" />
                     {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kycyn6r4 svg [data-color="1"]
                       #comp-kycyn6r4 svg [data-color="2"] </style></defs>
                       <g>
@@ -56,6 +58,7 @@ const Index = () => {
                 </div>
                 <div className="flex">
                   <div>
+                    <img src="/assets/images/icon3.png" className="h-[35px] w-[35px] mr-1" alt="" />
                     {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kycyn6qt svg [data-color="1"]
                       #comp-kycyn6qt svg [data-color="2"]</style></defs>
                       <g>
@@ -73,7 +76,7 @@ const Index = () => {
             </div>
 
             <div className="order-1 lg:order-2">
-              <img src="/assets/images/1.png" alt="" />
+              <img src="/assets/images/img_1.png" alt="" />
               {/* <svg className="w-full" preserveAspectRatio="xMidYMid meet" data-bbox="7.556 20.992 184.886 158.016" viewBox="7.556 20.992 184.886 158.016" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kyjx1reo svg [data-color="1"]
               #comp-kyjx1reo svg [data-color="2"]
               #comp-kyjx1reo svg [data-color="3"]
@@ -347,6 +350,7 @@ const Index = () => {
           <div className="w-full max-w-[1200px] mx-auto px-4 mt-20 order-2 lg:order-1">
             <div className="grid lg:grid-cols-2 md:grid-cols-1 py-8 px-3">
               <div className="flex justify-center lg:justify-start">
+              <img src="/assets/images/img_2.png" alt="" />
                 {/* <svg className="max-w-[475px]" preserveAspectRatio="xMidYMid meet" data-bbox="3.426 6.807 188.241 190.19" viewBox="3.426 6.807 188.241 190.19" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kyvbmqy6 svg [data-color="1"]
                   #comp-kyvbmqy6 svg [data-color="2"]
                   #comp-kyvbmqy6 svg [data-color="3"]
@@ -568,6 +572,7 @@ const Index = () => {
                   <div className="order-3 lg:order-4 grid grid-cols-1 md:grid-cols-3">
                     <div className="flex">
                       <div>
+                        <img src="/assets/images/icon_1.png" className="h-[35px] w-[35px] mr-1" alt="" />
                         {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true"><defs><style>#comp-kyvcofhk svg [data-color="1"]
                           #comp-kyvcofhk svg [data-color="2"] </style></defs>
                           <g>
@@ -586,6 +591,7 @@ const Index = () => {
                     </div>
                     <div className="flex">
                       <div>
+                        <img src="/assets/images/icon_2.png" className="h-[35px] w-[35px] mr-1" alt="" />
                         {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kyvcofjn svg [data-color="1"]
                           #comp-kyvcofjn svg [data-color="2"]</style></defs>
                           <g>
@@ -601,6 +607,7 @@ const Index = () => {
                     </div>
                     <div className="flex">
                       <div>
+                        <img src="/assets/images/icon_3.png" className="h-[35px] w-[35px] mr-1" alt="" />
                         {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="30" width="30" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true"><defs><style>#comp-kyvcoflc svg [data-color="1"]
                           #comp-kyvcoflc svg [data-color="2"] </style></defs>
                           <g>
@@ -704,6 +711,7 @@ const Index = () => {
           </div>
 
           <div>
+            <img src="/assets/images/img_3.png" alt="" />
             {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="5.562 43.898 188.88 112.161" viewBox="5.562 43.898 188.88 112.161" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true"><defs><style>#comp-kyk64ng6 svg [data-color="1"]
               #comp-kyk64ng6 svg [data-color="2"]
               #comp-kyk64ng6 svg [data-color="3"]

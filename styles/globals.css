@@ -33,7 +33,12 @@ body {
   font-family: 'Helvetica', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Spacegrotesk', sans-serif !important;
 }
 
@@ -108,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .explore_your {
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
 }
 
 .img_class {
@@ -169,4 +174,84 @@ h1, h2, h3, h4, h5, h6 {
 .HomeCrdImg {
   border-radius: 10px;
   border: 2px solid;
+}
+
+.header-white-curve {
+  transform: scaleY(-1);
+  width: 100%;
+  height: 100%;
+}
+
+.person_card {
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.person_card_img {
+  overflow: hidden;
+  width: 100%;
+  height: 375px;
+}
+
+.person_card_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.35s;
+  filter: grayscale(100%);
+}
+
+.person_card:hover .person_card_img img {
+  -webkit-transform: scale(1.15);
+  transform: scale(1.15);
+  filter: grayscale(0%);
+}
+
+.person_card .PerNm {
+  text-decoration: underline;
+}
+
+.best_value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.best_value button {
+  margin-top: -65px;
+}
+
+.priceCard {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  transition: 0.45s;
+  padding: 22px 22px;
+}
+
+.priceCard.priceCardHide {
+  height: 0px !important;
+  padding: 0px 22px !important;
+}
+
+.icon_div{
+  background-color: rgb(255, 191, 35);
+  transition: .35s;
+}
+
+.black_icon_div{
+  background-color: black;
+  transition: .35s;
+}
+
+.black_icon_div svg{
+  fill: white !important;
+}
+
+.pink_icon_div{
+  background-color: rgb(255, 215, 239);
+}
+
+.pink_icon_div svg {
+  transform: rotate(180deg);
 }
