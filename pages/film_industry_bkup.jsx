@@ -7,26 +7,22 @@ import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCategoryAction } from '../src/store/category/asyncActions';
 
-const Film_Industry = () => {
+const Film_industry = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
-  const [page, setPage] = useState(1);
-  const [size, setSize] = useState(2);
-  const [total, setTotal] = useState(0);
   const [categories, setCategories] = useState(null);
 
   const categoryData = useSelector((state) => state?.category?.allCategory);
 
   useEffect(() => {
-    dispatch(getAllCategoryAction({ type: 'Film_Industry', page, size }));
-  }, [page]);
+    dispatch(getAllCategoryAction({ type: 'Business', page: 1, size: 10 }));
+  }, []);
 
   useEffect(() => {
     if (categoryData?.loading === false) {
       if (categoryData?.data?.status && Array.isArray(categoryData?.data?.data?.records)) {
         setCategories(categoryData?.data?.data?.records);
-        setTotal(categoryData?.data?.data?.totalCount);
         categoryData.data = null;
       }
       setLoading(false);
@@ -37,21 +33,21 @@ const Film_Industry = () => {
     <>
       <Layout>
         <div className="max-w-[1024px] mx-auto px-3 mt-7">
-          <div className='text-[17px]'>Home / Film Industry</div>
+          <div className='text-[17px]'>Home / categories</div>
           <div className='text-[50px] explore_your'>Explore Your Fantacies</div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {categories && categories.map((item, index) => (
+            {categories && categories.map(() => (
               <>
                 <div className='flex justify-center items-center my-2 md:my-4 mx-1 '>
                   <div className='overflow-hidden w-full person_card'>
-                    <Link href={`/film_industry_details/${item?._id}`}>
+                    <Link href="/profile_description">
                       <div className='person_card_img'>
-                        <img src={item?.image} alt="" />
+                        <img src="/assets/images/22e53e_422c96a46cfd4873b36279bc94bf5bd4~mv2.webp" alt="" />
                       </div>
                     </Link>
                     <div className='p-3 mb-2'>
                       <Typography variant='h6' className='PerNm mb-2'>
-                        {item?.name}
+                        I&apos;m a product
                       </Typography>
                       <Typography variant='subtitle2'>
                         ₹85.00
@@ -77,12 +73,7 @@ const Film_Industry = () => {
             ))}
           </div>
           <Stack spacing={2} className='flex justify-center items-center my-4'>
-            <Pagination
-              count={Math.ceil(total / size)}
-              page={page}
-              onChange={(event, value) => setPage(value)}
-              color="primary"
-            />
+            <Pagination count={100} color="primary" />
           </Stack>
         </div>
       </Layout>
@@ -90,4 +81,4 @@ const Film_Industry = () => {
   )
 }
 
-export default Film_Industry
+export default Film_industry

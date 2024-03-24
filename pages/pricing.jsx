@@ -247,13 +247,13 @@ const Pricing = () => {
                         </div>
                     </div>
                 </div>
-                <div className='first_half p-12 mb-[0.5px] mt-8 pointer-events-none'>
-                    <div className="max-w-[1024px] mx-auto px-4">
+                <div className='first_half h-[55px] md:h-[85px] mb-[0.5px] mt-8 md:mt-[85px] pointer-events-none'>
+                    <div className="w-full max-w-[1024px] mx-auto px-4">
                         <div className='grid grid-cols-2'>
-                            <div className='z-10 mt-[-110px] md:mt-[-147px] order-2 lg:order-1'>
-                                <img className='h-[95px] w-[auto] md:h-[130px] w-[auto]' src="/assets/images/img_4.png" alt="" />
+                            <div className='z-10 mt-[-60px] md:mt-[-100px] flex justify-end lg:justify-start order-2 lg:order-1'>
+                                <img className='h-[80px] w-[auto] md:h-[130px] w-[auto]' src="/assets/images/img_4.png" alt="" />
                             </div>
-                            <div className='z-10 mt-[-110px] md:mt-[-147px] flex justify-end order-1 lg:order-2'>
+                            <div className='z-10 mt-[-75px] md:mt-[-115px] flex justify-start lg:justify-end order-1 lg:order-2'>
                                 <img className='h-[95px] w-[auto] md:h-[130px] w-[auto]' src="/assets/images/img_5.png" alt="" />
                             </div>
                         </div>

@@ -296,6 +296,26 @@ const profile_description = () => {
                             </div>
                         </div>
                     </div>
+
+                    <div className='flex justify-left'>
+                        <div className='flex flex-col mb-5 border-2 border-black rounded-md h-[fit-content] overflow-hidden'>
+                            <div className='first_div flex justify-center py-1 rounded'>
+                                <span className='text-white'>Refrences</span>
+                            </div>
+                            <div className='bg-[#FFF9EA] p-3 px-6'>
+                                <div className=''>
+                                    <div className="grid grid-cols-2 mb-3 gap-12">
+                                        <span className='text-[15px]'>Cars</span>
+                                        <span className='text-[15px]'>abc</span>
+                                    </div>
+                                    <div className="grid grid-cols-2 mb-3 gap-12">
+                                        <span className='text-[15px]'>Watches</span>
+                                        <span className='text-[15px]'>abc</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </Layout>
         </>

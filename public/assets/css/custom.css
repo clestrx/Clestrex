@@ -224,3 +224,89 @@
 .Disclaimer_sec {
   font-size: 12px;
 }
+
+/* image upload & preview */
+.fileDragArea {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #3f51b512;
+  border-radius: 4px;
+  border: 1px #c4c4c4 dashed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fileDragArea input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.AddMoreBtnDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.AddMoreBtnDiv button {
+  width: 100%;
+  position: relative;
+}
+
+.AddMoreBtnDiv button input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.fileDragArea div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fileDragArea .iconDiv {
+  padding: 8px 0px;
+}
+
+.fileDragArea .fileupTxt {
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.fileDragArea img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.fileDragArea .imgPrevOuter {
+  height: 100%;
+  position: relative;
+  border: 1px dashed grey;
+  border-radius: 4px;
+}
+
+.fileDragArea .imgRemove {
+  height: 35px;
+  width: 35px;
+  background-color: #f44336;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0px 4px;
+  cursor: pointer;
+}

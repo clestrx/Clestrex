@@ -19,6 +19,7 @@
     "axios": "^1.6.2",
     "fs": "^0.0.1-security",
     "moment": "^2.30.0",
+    "mongoose": "^8.2.2",
     "next": "12.1.0",
     "postcss-preset-env": "^9.5.0",
     "react": "17.0.2",

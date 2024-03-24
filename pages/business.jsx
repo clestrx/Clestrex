@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCategoryAction } from '../src/store/category/asyncActions';
 
-const Film_Industry = () => {
+const Business = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
@@ -19,7 +19,7 @@ const Film_Industry = () => {
   const categoryData = useSelector((state) => state?.category?.allCategory);
 
   useEffect(() => {
-    dispatch(getAllCategoryAction({ type: 'Film_Industry', page, size }));
+    dispatch(getAllCategoryAction({ type: 'Business', page, size }));
   }, [page]);
 
   useEffect(() => {
@@ -37,14 +37,14 @@ const Film_Industry = () => {
     <>
       <Layout>
         <div className="max-w-[1024px] mx-auto px-3 mt-7">
-          <div className='text-[17px]'>Home / Film Industry</div>
+          <div className='text-[17px]'>Home / Business</div>
           <div className='text-[50px] explore_your'>Explore Your Fantacies</div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {categories && categories.map((item, index) => (
               <>
                 <div className='flex justify-center items-center my-2 md:my-4 mx-1 '>
                   <div className='overflow-hidden w-full person_card'>
-                    <Link href={`/film_industry_details/${item?._id}`}>
+                    <Link href={`/business_details/${item?._id}`}>
                       <div className='person_card_img'>
                         <img src={item?.image} alt="" />
                       </div>
@@ -90,4 +90,4 @@ const Film_Industry = () => {
   )
 }
 
-export default Film_Industry
+export default Business

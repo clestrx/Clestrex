@@ -24,7 +24,11 @@ const pages = [
     },
     {
         name: 'Business',
-        url: '/profile_description'
+        url: '/business'
+    },
+    {
+        name: 'Sports',
+        url: '/sports'
     },
 ];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
