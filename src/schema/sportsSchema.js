@@ -33,6 +33,18 @@ const SportsSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    facebook: {
+        type: String,
+        default: ''
+    },
+    pinterest: {
+        type: String,
+        default: ''
+    },
+    instagram: {
+        type: String,
+        default: ''
+    },
     is_deleted: {
         type: Boolean,
         default: false

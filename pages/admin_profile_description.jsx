@@ -34,6 +34,9 @@ const Admin_profile_description = () => {
         maritalStatus: '',
         nationality: '',
         hometown: '',
+        facebook: '',
+        pinterest: '',
+        instagram: ''
     });
 
     const [formData, setFormData] = useState({
@@ -216,10 +219,19 @@ const Admin_profile_description = () => {
                                         <input type="text" name="hometown" value={data.hometown} onChange={handleChange} className='text-[15px] border border-black' />
                                     </div>
                                 </div>
-                                <div className='third_div flex justify-center mt-auto py-2'>
-                                    <img className='mr-3' width="29" height="29" src="/assets/images/e316f544f9094143b9eac01f1f19e697.webp" alt="" />
-                                    <img className='mr-3' width="29" height="29" src="/assets/images/11062b_9c81fe0a816041068cc7d995e7a01f90~mv2.webp" alt="" />
-                                    <img className='mr-3' width="29" height="29" src="/assets/images/8d6893330740455c96d218258a458aa4.webp" alt="" />
+                                <div className='third_div mt-auto py-2 px-3'>
+                                    <div className='flex mb-1'>
+                                        <img className='mr-3 min-w-[25px]' width="15" height="15" src="/assets/images/e316f544f9094143b9eac01f1f19e697.webp" alt="" />
+                                        <input type="text" name="facebook" value={data.facebook} onChange={handleChange} className='text-[15px] border border-black w-full' />
+                                    </div>
+                                    <div className='flex mb-1'>
+                                        <img className='mr-3 min-w-[25px]' width="15" height="15" src="/assets/images/11062b_9c81fe0a816041068cc7d995e7a01f90~mv2.webp" alt="" />
+                                        <input type="text" name="pinterest" value={data.pinterest} onChange={handleChange} className='text-[15px] border border-black w-full' />
+                                    </div>
+                                    <div className='flex mb-1'>
+                                        <img className='mr-3 min-w-[25px]' width="15" height="15" src="/assets/images/8d6893330740455c96d218258a458aa4.webp" alt="" />
+                                        <input type="text" name="instagram" value={data.instagram} onChange={handleChange} className='text-[15px] border border-black w-full' />
+                                    </div>
                                 </div>
                             </div>
                         </div>

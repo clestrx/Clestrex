@@ -310,3 +310,7 @@
   border-radius: 0px 4px;
   cursor: pointer;
 }
+
+.top_drawer .MuiPaper-root {
+  width: 100% !important; 
+}

@@ -3,6 +3,7 @@ import Layout from '../../src/layouts/Layout'
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCategoryAction } from '../../src/store/category/asyncActions';
+import Link from 'next/link';
 
 const Sports_details = () => {
     const router = useRouter();
@@ -79,9 +80,27 @@ const Sports_details = () => {
                                     </div>
                                 </div>
                                 <div className='third_div flex justify-center mt-auto py-2'>
-                                    <img className='mr-3' width="29" height="29" src="/assets/images/e316f544f9094143b9eac01f1f19e697.webp" alt="" />
-                                    <img className='mr-3' width="29" height="29" src="/assets/images/11062b_9c81fe0a816041068cc7d995e7a01f90~mv2.webp" alt="" />
-                                    <img className='mr-3' width="29" height="29" src="/assets/images/8d6893330740455c96d218258a458aa4.webp" alt="" />
+                                    {category?.facebook && category?.facebook.trim() !== '' &&
+                                        <Link href={category?.facebook}>
+                                            <a target="_blank">
+                                                <img className='mr-3' width="29" height="29" src="/assets/images/e316f544f9094143b9eac01f1f19e697.webp" alt="" />
+                                            </a>
+                                        </Link>
+                                    }
+                                    {category?.pinterest && category?.pinterest.trim() !== '' &&
+                                        <Link href={category?.pinterest}>
+                                            <a target="_blank">
+                                                <img className='mr-3' width="29" height="29" src="/assets/images/11062b_9c81fe0a816041068cc7d995e7a01f90~mv2.webp" alt="" />
+                                            </a>
+                                        </Link>
+                                    }
+                                    {category?.instagram && category?.instagram.trim() !== '' &&
+                                        <Link href={category?.instagram}>
+                                            <a target="_blank">
+                                                <img className='mr-3' width="29" height="29" src="/assets/images/8d6893330740455c96d218258a458aa4.webp" alt="" />
+                                            </a>
+                                        </Link>
+                                    }
                                 </div>
                             </div>
                         </div>

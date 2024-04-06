@@ -6,10 +6,35 @@ import DialogContent from '@mui/material/DialogContent';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Layout from '../src/layouts/Layout';
-import { Typography } from '@mui/material';
+import { CircularProgress, Typography } from '@mui/material';
+import { useRouter } from 'next/router';
+import { useDispatch, useSelector } from 'react-redux';
+import { makeContactAction } from '../src/store/user/asyncActions';
 
 const Pricing = () => {
     const [open, setOpen] = useState(false);
+    const router = useRouter();
+    const dispatch = useDispatch();
+    const [loading, setLoading] = useState(false);
+
+    const sendEmailData = useSelector((state) => state?.user?.contact);
+
+    useEffect(() => {
+        if (sendEmailData?.loading === false) {
+            if (sendEmailData?.data?.status) {
+                setOpen(false);
+                setMailData({
+                    first_name: '',
+                    last_name: '',
+                    email: '',
+                    plan: 'free',
+                    message: ''
+                });
+                sendEmailData.data = null;
+            }
+            setLoading(false);
+        }
+    }, [sendEmailData]);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -48,6 +73,38 @@ const Pricing = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    const [mailData, setMailData] = useState({
+        first_name: '',
+        last_name: '',
+        email: '',
+        plan: 'free',
+        message: ''
+    });
+
+    const inpHandleChange = (e) => {
+        setMailData({
+            ...mailData,
+            [e.target.name]: e.target.value
+        });
+    }
+
+    const make_contact = (e) => {
+        e.preventDefault();
+        setLoading(true);
+
+        let html = '';
+        html += `<b>Name: </b>${mailData?.first_name} ${mailData?.last_name}<br>`;
+        html += `<b>E-Mail: </b>${mailData?.email}<br>`;
+        html += `<b>Plan: </b>${mailData?.plan}<br>`;
+        html += `<b>Message: </b>${mailData?.message}<br>`;
+
+        dispatch(makeContactAction({
+            email: mailData?.email,
+            subject: 'Plan Inquiry',
+            message: html
+        }));
+    }
+
     return (
         <>
             <Layout>
@@ -74,43 +131,43 @@ const Pricing = () => {
                             <CloseIcon />
                         </IconButton>
                         <DialogContent dividers>
-                            <div className="max-w-[1024px] mx-auto px-4 mt-7">
-                                <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 p-8 gap-14">
-                                    <div>
-                                        <img className='w-[483px] h-[483px]' src="/assets/images/White And Yellow Colorful Web Designer Instagram Post.webp" alt="" />
+                            <div className="max-w-[1024px] px-4">
+                                <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-14">
+                                    <div className='hidden md:block'>
+                                        <img className='w-[100%] h-[383px]' src="/assets/images/White And Yellow Colorful Web Designer Instagram Post.webp" alt="" />
                                     </div>
                                     <div>
-                                        <form action="#" method="post" className="space-y-6">
+                                        <form className="space-y-6" onSubmit={(e) => make_contact(e)}>
                                             <div className="flex space-x-4">
                                                 <div className="w-1/2">
-                                                    <label htmlFor="email" className="block text-sm font-medium">First Name</label>
-                                                    <input type="email" id="email" name="email" className="mt-1 p-2 w-full border border-gray-300 focus:outline-none bg-transparent hover:bg-white focus:bg-white" />
+                                                    <label className="block text-sm font-medium">First Name</label>
+                                                    <input type="text" name="first_name" required value={mailData?.first_name} onChange={(e) => inpHandleChange(e)} className="mt-1 p-2 w-full border border-gray-300 focus:outline-none bg-transparent hover:bg-white focus:bg-white" />
                                                 </div>
                                                 <div className="w-1/2">
-                                                    <label htmlFor="query" className="block text-sm font-medium">Last Name</label>
-                                                    <input type="text" id="query" name="query" className="mt-1 p-2 w-full border border-gray-300 focus:outline-none bg-transparent placeholder-black hover:bg-white focus:bg-white" />
+                                                    <label className="block text-sm font-medium">Last Name</label>
+                                                    <input type="text" name="last_name" required value={mailData?.last_name} onChange={(e) => inpHandleChange(e)} className="mt-1 p-2 w-full border border-gray-300 focus:outline-none bg-transparent placeholder-black hover:bg-white focus:bg-white" />
                                                 </div>
                                             </div>
                                             <div>
-                                                <label htmlFor="query" className="block text-sm font-medium">Email *</label>
-                                                <input type="text" id="query" name="query" className="mt-1 p-2 w-full border border-gray-300 focus:outline-none bg-transparent placeholder-black hover:bg-white focus:bg-white" />
+                                                <label className="block text-sm font-medium">Email *</label>
+                                                <input type="email" name="email" required value={mailData?.email} onChange={(e) => inpHandleChange(e)} className="mt-1 p-2 w-full border border-gray-300 focus:outline-none bg-transparent placeholder-black hover:bg-white focus:bg-white" />
                                             </div>
                                             <div>
                                                 <label htmlFor="prefferedPlan" className="block text-sm font-medium">Preferred Plan *</label>
-                                                <select id="preferredPlan" name="preferredPlan" className="mt-1 p-2 w-full border border-gray-300 focus:outline-none bg-transparent placeholder-black hover:bg-white focus:bg-white">
-                                                    <option value="choice1">Choice 1</option>
-                                                    <option value="choice2">Choice 2</option>
-                                                    <option value="choice3">Choice 3</option>
-                                                    <option value="choice4">Choice 4</option>
+                                                <select id="preferredPlan" name="plan" value={mailData?.plan} onChange={(e) => inpHandleChange(e)} className="mt-1 p-2 w-full border border-gray-300 focus:outline-none bg-transparent placeholder-black hover:bg-white focus:bg-white">
+                                                    <option value="free">Free</option>
+                                                    <option value="standard">Standard</option>
+                                                    <option value="premium">Premium</option>
                                                 </select>
                                             </div>
                                             <div>
                                                 <label htmlFor="message" className="block text-sm font-medium">Message</label>
-                                                <textarea id="message" name="message" rows="4" className="mt-1 p-2 w-full border border-gray-300 focus:outline-none bg-transparent placeholder-black hover:bg-white focus:bg-white"></textarea>
+                                                <input type="text" required id="message" value={mailData?.message} name="message" onChange={(e) => inpHandleChange(e)} className="mt-1 p-2 w-full h-[45px] border border-gray-300 focus:outline-none bg-transparent placeholder-black hover:bg-white focus:bg-white">
+                                                </input>
                                             </div>
                                             <div>
-                                                <button type="submit" className="sub_but text-white px-4 py-2 w-full rounded-md transition duration-300 hover:bg-black hover:text-white hover:border-1 hover:border-black focus:outline-none focus:ring focus:border-blue-300">
-                                                    Submit
+                                                <button disabled={loading} type="submit" className="sub_but flex justify-center items-center text-white px-4 py-2 w-full rounded-md transition duration-300 hover:bg-black hover:text-white hover:border-1 hover:border-black focus:outline-none focus:ring focus:border-blue-300">
+                                                    {loading ? <CircularProgress style={{ color: 'white', height: '22px', width: '22px' }} /> : 'Submit'}
                                                 </button>
                                             </div>
                                         </form>

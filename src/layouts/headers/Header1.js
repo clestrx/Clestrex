@@ -13,6 +13,12 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import { useState } from 'react';
+
 const pages = [
     {
         name: 'Home',
@@ -57,6 +63,12 @@ const Header1 = () => {
         setAnchorElUser(null);
     };
 
+    const [open, setOpen] = useState(false);
+
+    const toggleDrawer = () => {
+        setOpen(!open);
+    };
+
     return (
         <>
             <div className='bg-black p-[5px]'></div>
@@ -66,12 +78,7 @@ const Header1 = () => {
                         {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
                         <div className='flex'>
                             <div>
-                                <img className="flex mr-1 h-[40px] w-[105px]" src="/assets/images/logo.png" alt="" />
-                                {/* <svg className="flex mr-1" preserveAspectRatio="xMidYMid meet" data-bbox="23.5 23.5 153 153" viewBox="23.5 23.5 153 153" height="40" width="40" xmlns="http://www.w3.org/2000/svg" data-type="color" role="img" aria-label="Homepage"><defs><style>#comp-kybbhi6c svg [data-color="1"] </style></defs>
-                                <g>
-                                    <path d="M158.026 23.5H41.974C31.771 23.5 23.5 31.771 23.5 41.974v116.052c0 10.203 8.271 18.474 18.474 18.474h116.052c10.203 0 18.474-8.271 18.474-18.474V41.974c0-10.203-8.271-18.474-18.474-18.474zM62.37 125.347c-8.382 1.206-16.154-4.611-17.36-12.992s4.611-16.154 12.992-17.36c8.382-1.206 16.154 4.611 17.36 12.992s-4.61 16.154-12.992 17.36zm89.787-43.89-47.193 63.061a14.978 14.978 0 0 1-12.021 6.014c-3.127 0-6.279-.974-8.976-2.992-6.633-4.964-7.985-14.364-3.022-20.997l47.193-63.061c4.964-6.633 14.363-7.985 20.997-3.022 6.632 4.964 7.985 14.365 3.022 20.997z" fill="#111010" data-color="1"></path>
-                                </g>
-                            </svg> */}
+                                <img className="flex mr-1 h-[40px] w-[105px] min-w-[36px]" src="/assets/images/logo.png" alt="" />
                             </div>
                             <div className='ml-2'>
                                 <Typography
@@ -122,47 +129,11 @@ const Header1 = () => {
                                     aria-label="account of current user"
                                     aria-controls="menu-appbar"
                                     aria-haspopup="true"
-                                    onClick={handleOpenNavMenu}
+                                    onClick={toggleDrawer}
                                     color="black"
                                 >
                                     <MenuIcon />
                                 </IconButton>
-                                <Menu
-                                    id="menu-appbar"
-                                    anchorEl={anchorElNav}
-                                    anchorOrigin={{
-                                        vertical: 'bottom',
-                                        horizontal: 'left',
-                                    }}
-                                    keepMounted
-                                    transformOrigin={{
-                                        vertical: 'top',
-                                        horizontal: 'left',
-                                    }}
-                                    open={Boolean(anchorElNav)}
-                                    onClose={handleCloseNavMenu}
-                                    sx={{
-                                        display: { xs: 'block', md: 'none' },
-                                    }}
-                                >
-                                    {pages.map((page, index) => {
-                                        return (
-                                            <MenuItem key={index} onClick={handleCloseNavMenu}>
-                                                <a href={page?.url} style={{ textDecoration: 'none', color: 'inherit' }}>
-                                                    <Typography textAlign="center">{page?.name}</Typography>
-                                                </a>
-                                            </MenuItem>
-                                        )
-                                    })}
-                                    <MenuItem onClick={handleCloseNavMenu}>
-                                        <a onClick={() => scrolltoHash('contact_us')} style={{ textDecoration: 'none', color: 'inherit' }}>
-                                            <Typography textAlign="center">Contact</Typography>
-                                        </a>
-                                    </MenuItem>
-                                    <a href="/pricing">
-                                        <button className='join_clestrx join_clestrx_2'>Join Clestrx</button>
-                                    </a>
-                                </Menu>
                             </Box>
                         </div>
 
@@ -195,38 +166,81 @@ const Header1 = () => {
                         </div>
 
                         {/* <Box sx={{ flexGrow: 0 }}>
-        <Tooltip title="Open settings">
-          <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-          </IconButton>
-        </Tooltip>
-        <Menu
-          sx={{ mt: '45px' }}
-          id="menu-appbar"
-          anchorEl={anchorElUser}
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          keepMounted
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          open={Boolean(anchorElUser)}
-          onClose={handleCloseUserMenu}
-        >
-          {settings.map((setting) => (
-            <MenuItem key={setting} onClick={handleCloseUserMenu}>
-              <Typography textAlign="center">{setting}</Typography>
-            </MenuItem>
-          ))}
-        </Menu>
-      </Box> */}
+                                <Tooltip title="Open settings">
+                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                </IconButton>
+                                </Tooltip>
+                                <Menu
+                                sx={{ mt: '45px' }}
+                                id="menu-appbar"
+                                anchorEl={anchorElUser}
+                                anchorOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right',
+                                }}
+                                keepMounted
+                                transformOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right',
+                                }}
+                                open={Boolean(anchorElUser)}
+                                onClose={handleCloseUserMenu}
+                                >
+                                {settings.map((setting) => (
+                                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                                    <Typography textAlign="center">{setting}</Typography>
+                                    </MenuItem>
+                                ))}
+                                </Menu>
+                            </Box> */}
                     </Toolbar>
                     <div className='LogoBar'></div>
                 </Container>
             </AppBar >
+
+            <Drawer
+                className='top_drawer'
+                anchor="top"
+                open={open}
+                onClose={toggleDrawer}
+                variant="temporary"
+                sx={{
+                    width: 240,
+                    flexShrink: 0,
+                    '& .MuiDrawer-paper': {
+                        width: 240,
+                        boxSizing: 'border-box',
+                    },
+                }}
+            >
+                <List>
+                    <ListItem>
+                        <ListItemText>
+                            <Typography variant="h6">Clestrx</Typography>
+                        </ListItemText>
+                    </ListItem>
+                    {pages.map((page, index) => {
+                        return (
+                            <ListItem key={index}>
+                                <a href={page?.url} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                    <Typography textAlign="center">{page?.name}</Typography>
+                                </a>
+                            </ListItem>
+                        )
+                    })}
+                    <ListItem>
+                        <a onClick={() => scrolltoHash('contact_us')} style={{ textDecoration: 'none', color: 'inherit' }}>
+                            <Typography textAlign="center">Contact</Typography>
+                        </a>
+                    </ListItem>
+                    <ListItem>
+                        <a href="/pricing">
+                            <button className='join_clestrx join_clestrx_2'>Join Clestrx</button>
+                        </a>
+                    </ListItem>
+                </List>
+            </Drawer>
         </>
     );
 };

@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import fs from 'fs';
 import path from 'path';
+import nodemailer from 'nodemailer';
 
 export const animation = () => {
   if (typeof window !== "undefined") {
@@ -38,4 +39,32 @@ export function base64ToFile(base64String) {
   fs.writeFileSync(filePath, Buffer.from(data, 'base64'));
   return filePath;
   // console.log(`File ${fileName} created successfully at ${filePath}.`);
+}
+
+export async function sendEmail(email, subject, text, html) {
+  try {
+   
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false, // true for 465, false for other ports
+      auth: {
+        user: 'optexsolutionsjamnagar@gmail.com',
+        pass: 'edjc kucu kevk ugzj'
+      }
+    });
+
+    const mailOptions = {
+      from: email, // sender address
+      to: 'optexsolutionsjamnagar@gmail.com', // list of receivers
+      subject, // Subject line
+      text, // plain text body
+      html, // html body
+    };
+
+    const info = await transporter.sendMail(mailOptions);
+    return { success: true, data: info.response }
+  } catch (error) {
+    return { success: false, data: error }
+  }
 }

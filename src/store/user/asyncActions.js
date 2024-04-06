@@ -1,4 +1,4 @@
-import { getUserError, getUserLoading, getUserSuccess, updateUserProfileError, updateUserProfileLoading, updateUserProfileSuccess, userLoginError, userLoginLoading, userLoginSuccess, userRegisterError, userRegisterLoading, userRegisterSuccess } from './actions';
+import { getUserError, getUserLoading, getUserSuccess, makeContactError, makeContactLoading, makeContactSuccess, updateUserProfileError, updateUserProfileLoading, updateUserProfileSuccess, userLoginError, userLoginLoading, userLoginSuccess, userRegisterError, userRegisterLoading, userRegisterSuccess } from './actions';
 import api from '../api';
 import { toast } from 'react-toastify';
 
@@ -96,9 +96,33 @@ const updateUserProfileAction = (postData) => {
   };
 };
 
+const makeContactAction = (postData) => {
+  return async (dispatch) => {
+    try {
+      // Start the loading state
+      dispatch(makeContactLoading());
+
+      // Perform the asynchronous operation (e.g., API call)
+      const response = await api.post('api/send-email', postData);
+      const data = response.data;
+
+      // Dispatch success action with the received data
+      dispatch(makeContactSuccess(data));
+      if (data?.status) {
+        toast.success(data?.message);
+      }
+    } catch (error) {
+      // Dispatch error action if an error occurs
+      dispatch(makeContactError(error.message));
+      toast.error(error?.response?.data?.message);
+    }
+  };
+};
+
 export {
   userLoginAction,
   userRegisterAction,
   getUserAction,
-  updateUserProfileAction
+  updateUserProfileAction,
+  makeContactAction
 };

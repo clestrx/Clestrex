@@ -1,6 +1,56 @@
-import React from "react";
+import { CircularProgress } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { makeContactAction } from "../store/user/asyncActions";
 
 const Footer = () => {
+
+    const dispatch = useDispatch();
+    const [loading, setLoading] = useState(false);
+
+    const [mailData, setMailData] = useState({
+        email: '',
+        query: '',
+        message: ''
+    });
+
+    const inpHandleChange = (e) => {
+        setMailData({
+            ...mailData,
+            [e.target.name]: e.target.value
+        });
+    }
+
+    const sendEmailData = useSelector((state) => state?.user?.contact);
+
+    useEffect(() => {
+        if (sendEmailData?.loading === false) {
+            if (sendEmailData?.data?.status) {
+                setMailData({
+                    email: '',
+                    query: '',
+                    message: ''
+                });
+                sendEmailData.data = null;
+            }
+            setLoading(false);
+        }
+    }, [sendEmailData]);
+
+    const make_contact = (e) => {
+        e.preventDefault();
+        setLoading(true);
+
+        let html = '';
+        html += `<b>E-Mail: </b>${mailData?.email}<br>`;
+        html += `<b>Message: </b>${mailData?.message}<br>`;
+
+        dispatch(makeContactAction({
+            email: mailData?.email,
+            subject: mailData?.query,
+            message: html
+        }));
+    }
 
     return (
         <>
@@ -63,24 +113,25 @@ const Footer = () => {
 
                         <div className="pl-0 lg:pl-4" id='contact_us'>
                             <h1 className='text-[20px] font-semibold mb-8 mt-12 lg:mt-0'>Contact Us</h1>
-                            <form action="#" method="post" className="space-y-6">
+                            <form onSubmit={(e) => make_contact(e)} className="space-y-6">
                                 <div className="flex space-x-4">
                                     <div className="w-1/2">
                                         <label htmlFor="email" className="block text-sm font-medium text-black">Email *</label>
-                                        <input type="email" id="email" name="email" defaultValue="user@domain.com" className="mt-1 p-2 w-full border-2 border-black rounded-md focus:outline-none text-black bg-transparent hover:bg-white focus:bg-white" />
+                                        <input type="email" id="email" name="email" required value={mailData?.email} onChange={(e) => inpHandleChange(e)} placeholder="example@abc.com" className="mt-1 p-2 w-full border-2 border-black rounded-md focus:outline-none text-black bg-transparent placeholder-black hover:bg-white focus:bg-white" />
                                     </div>
                                     <div className="w-1/2">
                                         <label htmlFor="query" className="block text-sm font-medium text-black">Query *</label>
-                                        <input type="text" id="query" name="query" placeholder="Subject for Query" className="mt-1 p-2 w-full border-2 border-black rounded-md focus:outline-none text-black bg-transparent placeholder-black hover:bg-white focus:bg-white" />
+                                        <input type="text" id="query" name="query" required value={mailData?.query} onChange={(e) => inpHandleChange(e)} placeholder="Subject for Query" className="mt-1 p-2 w-full border-2 border-black rounded-md focus:outline-none text-black bg-transparent placeholder-black hover:bg-white focus:bg-white" />
                                     </div>
                                 </div>
                                 <div>
                                     <label htmlFor="message" className="block text-sm font-medium text-black">Message *</label>
-                                    <textarea id="message" name="message" placeholder="Elaborate Your Concerns" rows="4" className="resize-none mt-1 p-2 w-full border-2 border-black rounded-md focus:outline-none text-black bg-transparent placeholder-black hover:bg-white focus:bg-white"></textarea>
+                                    <textarea id="message" value={mailData?.message} name="message" required onChange={(e) => inpHandleChange(e)} placeholder="Elaborate Your Concerns" rows="4" className="resize-none mt-1 p-2 w-full border-2 border-black rounded-md focus:outline-none text-black bg-transparent placeholder-black hover:bg-white focus:bg-white">
+                                    </textarea>
                                 </div>
                                 <div>
-                                    <button type="submit" className="bg-black text-white px-4 py-2 w-full rounded-md transition duration-300 hover:bg-white hover:text-black hover:border-1 hover:border-black focus:outline-none focus:ring focus:border-blue-300">
-                                        Submit
+                                    <button disabled={loading} type="submit" className="bg-black flex justify-center items-center text-white px-4 py-2 w-full rounded-md transition duration-300 hover:bg-white hover:text-black hover:border-1 hover:border-black focus:outline-none focus:ring focus:border-blue-300">
+                                        {loading ? <CircularProgress style={{ color: '#ffbf23', height: '22px', width: '22px' }} /> : 'Submit'}
                                     </button>
                                 </div>
                             </form>

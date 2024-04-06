@@ -1,4 +1,4 @@
-import { GET_USER_ERROR, GET_USER_LOADING, GET_USER_SUCCESS, UPDATE_PROFILE_ERROR, UPDATE_PROFILE_LOADING, UPDATE_PROFILE_SUCCESS, USER_LOGIN_ERROR, USER_LOGIN_LOADING, USER_LOGIN_SUCCESS, USER_REGISTER_ERROR, USER_REGISTER_LOADING, USER_REGISTER_SUCCESS } from './actionTypes';
+import { GET_USER_ERROR, GET_USER_LOADING, GET_USER_SUCCESS, MAKE_CONTACT_ERROR, MAKE_CONTACT_LOADING, MAKE_CONTACT_SUCCESS, UPDATE_PROFILE_ERROR, UPDATE_PROFILE_LOADING, UPDATE_PROFILE_SUCCESS, USER_LOGIN_ERROR, USER_LOGIN_LOADING, USER_LOGIN_SUCCESS, USER_REGISTER_ERROR, USER_REGISTER_LOADING, USER_REGISTER_SUCCESS } from './actionTypes';
 
 // user login
 const userLoginLoading = () => {
@@ -84,6 +84,27 @@ const updateUserProfileError = (error) => {
   };
 };
 
+// make contact
+const makeContactLoading = () => {
+  return {
+    type: MAKE_CONTACT_LOADING,
+  };
+};
+
+const makeContactSuccess = (data) => {
+  return {
+    type: MAKE_CONTACT_SUCCESS,
+    payload: data,
+  };
+};
+
+const makeContactError = (error) => {
+  return {
+    type: MAKE_CONTACT_ERROR,
+    payload: error,
+  };
+};
+
 export {
   userLoginLoading,
   userLoginSuccess,
@@ -100,5 +121,9 @@ export {
  updateUserProfileLoading,
  updateUserProfileSuccess,
  updateUserProfileError,
+
+ makeContactLoading,
+ makeContactSuccess,
+ makeContactError,
 
 };
