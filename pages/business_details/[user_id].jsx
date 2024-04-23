@@ -434,6 +434,10 @@ const Business_details = () => {
                         </div>
                     </div>
 
+                    <div>
+                        
+                    </div>
+
                     <div className='flex justify-left'>
                         <div className='flex flex-col mb-5 border-2 border-black rounded-md h-[fit-content] overflow-hidden'>
                             <div className='first_div flex justify-center py-1 rounded'>

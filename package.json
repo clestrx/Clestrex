@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export",
-    "postinstall": "postcss --use tailwindcss --use autoprefixer -o styles/main.css styles/globals.css"
+    "export": "next export"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -38,6 +37,12 @@
     "eslint": "8.10.0",
     "eslint-config-next": "12.1.0",
     "postcss": "^8.4.35",
+    "postinstall": "postcss --use tailwindcss --use autoprefixer -o styles/main.css styles/globals.css",
     "tailwindcss": "^3.4.1"
-  }
+  },
+  "main": "next.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
